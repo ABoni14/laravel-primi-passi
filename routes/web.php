@@ -13,6 +13,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get("/", function () {
+
+    $data = [
+        "name" => "Andrea",
+        "lastname" => "Boni",
+        "films" => [
+            "Il Signore degli anelli",
+            "Don't Look Up",
+            "Deadpool",
+            "Per un pugno di dollari"
+        ],
+        "stampa" => false
+    ];
+    return view("home", $data);
+})->name("home");
+
+Route::get("/about-us", function () {
+    return view("about");
+})->name("about");
+
+Route::get("/contatti", function () {
+    return view("contacts");
+})->name("contacts");
