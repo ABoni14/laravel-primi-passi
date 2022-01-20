@@ -24,7 +24,7 @@ Route::get("/", function () {
             "Deadpool",
             "Per un pugno di dollari"
         ],
-        "stampa" => false
+        "stampa" => true
     ];
     return view("home", $data);
 })->name("home");
